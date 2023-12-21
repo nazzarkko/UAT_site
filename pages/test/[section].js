@@ -105,27 +105,29 @@ function index() {
                                 <div className={styles.questionTitle}>
                                     {index + 1}. {question.question}
                                 </div>
-                                {question.answer.map((option, index_) => {
-                                    const uniqueId = `question-${index}-option-${index_}`;
-                                    return (
-                                        <div key={uniqueId} className={styles.option}>
-                                            <input
-                                                type="radio"
-                                                id={uniqueId}
-                                                name={`question-${index}`}
-                                                value={option}
-                                                onChange={() => handleOptionChange(index, option)}
-                                                checked={answers[index] === option}
-                                                required
-                                            />
-                                            <label htmlFor={uniqueId}>{option}</label>
-                                        </div>
-                                    );
-                                })}
+                                <div className={styles.options}>
+                                    {question.answer.map((option, index_) => {
+                                        const uniqueId = `question-${index}-option-${index_}`;
+                                        return (
+                                            <div key={uniqueId} className={styles.option}>
+                                                <input
+                                                    type="radio"
+                                                    id={uniqueId}
+                                                    name={`question-${index}`}
+                                                    value={option}
+                                                    onChange={() => handleOptionChange(index, option)}
+                                                    checked={answers[index] === option}
+                                                    required
+                                                />
+                                                <label htmlFor={uniqueId}>{option}</label>
+                                            </div>
+                                        );
+                                    })}
+                                </div>
                             </div>
                         ))}
                     </div>
-                    <button type="submit">Submit</button>
+                    <button className={styles.submit} type="submit">Submit</button>
                 </form>
 
 

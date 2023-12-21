@@ -29,11 +29,6 @@
       "static/chunks/webpack.js",
       "static/chunks/main.js",
       "static/chunks/pages/test/[section].js"
-    ],
-    "/test/result": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/test/result.js"
     ]
   },
   "ampFirstPages": []

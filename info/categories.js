@@ -6,7 +6,8 @@ export const categories = [
     "critical thinking",
     "co-operation",
     "activity",
-    "leadership"
+    "leadership",
+    "logic"
 ]
 
 export const categories_ukr = {
@@ -17,5 +18,6 @@ export const categories_ukr = {
     "critical thinking": "Критичне мислення",
     "co-operation": "Співпраця",
     "activity": "Активність",
-    "leadership": "Лідерство"
+    "leadership": "Лідерство",
+    "logic": "Логічне мислення"
 }

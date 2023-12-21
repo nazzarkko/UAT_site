@@ -2,7 +2,6 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/api/load_questions": "pages/api/load_questions.js",
   "/test/[section]": "pages/test/[section].js",
-  "/test/result": "pages/test/result.js"
+  "/api/load_questions": "pages/api/load_questions.js"
 }
