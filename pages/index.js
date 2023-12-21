@@ -11,9 +11,9 @@ function index() {
         <div className={styles.main}>
             <div className={styles.container}>
                 <h1>Тест Української Армії</h1>
-                <div>
+                <h6>
                     Тест для підбору напрямку та спеціальності в Українській Армії. Усі дані будуть зашифровані та достіпні лише Вам, при надані паролю.
-                </div>
+                </h6>
                 <Link href={`/test/${categories[0]}`} onClick={
                     () => {
                         writeLS('answers', {});
