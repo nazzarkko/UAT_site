@@ -40,6 +40,7 @@ function index() {
         const dataPoints = chartData_;
         const chartData = {
             labels: Object.keys(dataPoints).map((key) => categories_ukr[key]),
+            // set label size
             datasets: [
                 {
                     label: 'Результати тесту',
@@ -54,7 +55,10 @@ function index() {
         setChartData(chartData);
 
     }
+
+    const [width, setWidth] = useState(0);
     useEffect(() => {
+        setWidth(window.innerWidth);
         loadResults();
     }, []);
 
@@ -70,9 +74,20 @@ function index() {
                     display: true
                 },
                 suggestedMin: 0,
-                suggestedMax: 100
-            }
-        }
+                suggestedMax: 100,
+                pointLabels: {
+                    font: {
+                        size: width > 600 ? 20 : 12,
+                    }
+                },
+                ticks: {
+                    font: {
+                        size: 12,
+                    }
+                }
+
+            },
+        },
     };
 
     return (
@@ -82,8 +97,9 @@ function index() {
                     Результати тесту
                 </div>
 
-                {chartData && <Radar data={chartData} options={chartOptions} />}
-
+                <div className={styles.results}>
+                    {chartData && <Radar data={chartData} options={chartOptions} />}
+                </div>
 
 
 

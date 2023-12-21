@@ -96,3 +96,17 @@
     padding: 20px 50px 20px 50px;
     border-radius: 50px;
 }
+
+
+
+.results {
+    width: 60%;
+    margin-bottom: 100px;
+}
+
+@media screen and (max-width: 800px) {
+    .results {
+        width: 90%;
+    }
+
+}
