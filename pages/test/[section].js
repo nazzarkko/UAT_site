@@ -116,6 +116,7 @@ function index() {
                                                 value={option}
                                                 onChange={() => handleOptionChange(index, option)}
                                                 checked={answers[index] === option}
+                                                required
                                             />
                                             <label htmlFor={uniqueId}>{option}</label>
                                         </div>
