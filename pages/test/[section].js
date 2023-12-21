@@ -12,6 +12,7 @@ function index() {
 
     const [questions, setQuestions] = useState([]);
     const [category, setCategory] = useState('');
+    const [category1, setCategory1] = useState('');
     const router = useRouter();
 
     const loadQuestions = async (section) => {
@@ -23,6 +24,18 @@ function index() {
         //     question.answer = Object.keys(question.answer);
         // }
         setQuestions(newQuestions);
+
+        // from localstorage load previous answers
+        const answersFromLS = readLS('answers') || {};
+        const answers = answersFromLS[section] || {};
+        // replace with a list of answers
+        const answers_ = answers.map((answer) => answer.answer);
+        setAnswers(answers_);
+
+        console.log(answers);
+
+
+
     }
     useEffect(() => {
         if (router.query.section == undefined) {
@@ -37,6 +50,7 @@ function index() {
         }
 
         setCategory(categories_ukr[section] || section);
+        setCategory1(section);
 
         loadQuestions(section);
     }, [router.query.section]);
@@ -126,8 +140,23 @@ function index() {
                                 </div>
                             </div>
                         ))}
+                        <div className={styles.navigation}>
+                            {categories.indexOf(category1) == 0 ? (
+                                <button className={styles.submit} type="submit">Далі</button>
+                            ) : (categories.indexOf(category1) == categories.length - 1 ?
+                                <button className={styles.submit} type="submit">Завершити</button>
+                                :
+                                <>
+                                    <button className={styles.back} onClick={() => {
+                                        window.location.href = `/test/${categories[categories.indexOf(category1) - 1]}`;
+                                    }}>Назад</button>
+                                    <button className={styles.submit} type="submit">Далі</button>
+                                </>
+                            )
+                            }
+                        </div>
                     </div>
-                    <button className={styles.submit} type="submit">Submit</button>
+
                 </form>
 
 
