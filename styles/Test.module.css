@@ -62,6 +62,10 @@
     font-weight: 300;
 }
 
+.option input {
+    margin-right: 12px;
+}
+
 
 .navigation {
     display: flex;
