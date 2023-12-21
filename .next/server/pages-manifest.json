@@ -2,6 +2,5 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/test/[section]": "pages/test/[section].js",
-  "/api/load_questions": "pages/api/load_questions.js"
+  "/test/[section]": "pages/test/[section].js"
 }

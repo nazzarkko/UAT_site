@@ -24,9 +24,9 @@
 .questions {
     font-size: 1.5rem;
     margin-bottom: 50px;
-    width: 800px;
-    max-width: 80%;
-    min-width: 200px;
+    width: 80%;
+    max-width: 800px;
+    min-width: 100px;
     margin-left: 10%;
 
     display: flex;
