@@ -41,7 +41,7 @@ function index() {
         loadQuestions(section);
     }, [router.query.section]);
 
-    const [answers, setAnswers] = useState([]);
+    const [answers, setAnswers] = useState({});
 
 
     const handleSubmit = (event) => {
@@ -50,8 +50,8 @@ function index() {
 
 
         // save answers to localstorage
-        // const answersFromLS = readLS('answers') || {};
-        const answersFromLS = {};
+        const answersFromLS = readLS('answers') || {};
+        // const answersFromLS = {};
         const answers_with_id = Object.keys(answers).map((key, index) => {
             console.log(questions[key])
             return {
@@ -68,12 +68,12 @@ function index() {
             return;
         }
         if (sectionIndex == categories.length - 1) {
-            router.push('/test/result');
+            window.location.href = '/test/result';
             return;
         }
         const nextSection = categories[sectionIndex + 1];
         if (nextSection != undefined) {
-            router.push(`/test/${nextSection}`);
+            window.location.href = `/test/${nextSection}`;
         }
 
         // Here you can add logic to send data to a server or process it

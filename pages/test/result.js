@@ -33,7 +33,6 @@ function index() {
         });
 
         const results = await response.json();
-        console.log(results);
         setResults(results);
 
 
@@ -51,7 +50,6 @@ function index() {
                 },
             ],
         };
-        console.log(chartData)
 
         setChartData(chartData);
 
