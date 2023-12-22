@@ -10,6 +10,8 @@ function index() {
     return (
         <div className={styles.main}>
             <div className={styles.container}>
+                <img src="/logo2.png" alt="logo" />
+                <div className={styles.spacer}></div>
                 <h1>Тест Української Армії</h1>
                 <h6>
                     Тест для підбору напрямку та спеціальності в Українській Армії. Усі дані будуть зашифровані та доступні лише Вам, при надані паролю.
