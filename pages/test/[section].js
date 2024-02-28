@@ -13,6 +13,8 @@ function index() {
     const [questions, setQuestions] = useState([]);
     const [category, setCategory] = useState('');
     const [category1, setCategory1] = useState('');
+    const [answers, setAnswers] = useState([]);
+
     const router = useRouter();
 
     const loadQuestions = async (section) => {
@@ -26,17 +28,27 @@ function index() {
         setQuestions(newQuestions);
 
         // from localstorage load previous answers
-        const answersFromLS = readLS('answers') || {};
-        const answers = answersFromLS[section] || {};
+        const answersFromLS = readLS('answers') || [];
+        const answers_ = answersFromLS[section] || [];
         // replace with a list of answers
-        const answers_ = answers.map((answer) => answer.answer);
+        // if (answers.length != 0) {
+        //     console.log(answers);
+        //     const answers_ = answers.map((answer) => answer.answer);
+        //     setAnswers(answers_);
+        // } else {
+        //     setAnswers({});
+        // }
+
+        // console.log(answers);
+
+
         setAnswers(answers_);
 
-        console.log(answers);
+        // answers_ format is [{id: ..., answer: ...}, ...]
 
-
-
+        console.log(answers_);
     }
+
     useEffect(() => {
         if (router.query.section == undefined) {
             return;
@@ -55,9 +67,6 @@ function index() {
         loadQuestions(section);
     }, [router.query.section]);
 
-    const [answers, setAnswers] = useState({});
-
-
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log('Submitted Answers:', answers);
@@ -70,7 +79,7 @@ function index() {
             console.log(questions[key])
             return {
                 id: questions[key].id,
-                answer: answers[key],
+                answer: answers[key].answer,
             };
         });
         answersFromLS[router.query.section] = answers_with_id;
@@ -94,12 +103,21 @@ function index() {
     };
 
 
+
     // Function to handle option selection
     const handleOptionChange = (questionIndex, selectedOption) => {
-        setAnswers({
-            ...answers,
-            [questionIndex]: selectedOption,
-        });
+        const newAnswers = [...answers];
+        // go through the array of answers
+        for (let i = 0; i < newAnswers.length; i++) {
+            if (newAnswers[i].id == questionIndex) {
+                newAnswers[i].answer = selectedOption;
+                setAnswers(newAnswers);
+                return;
+            }
+        }
+        // if not found, add a new answer
+        newAnswers.push({ id: questionIndex, answer: selectedOption });
+
     };
 
 
@@ -125,12 +143,12 @@ function index() {
                                         return (
                                             <div key={uniqueId} className={styles.option}>
                                                 <input
-                                                    type="radio"
+                                                    type="checkbox"
                                                     id={uniqueId}
                                                     name={`question-${index}`}
                                                     value={option}
-                                                    onChange={() => handleOptionChange(index, option)}
-                                                    checked={answers[index] === option}
+                                                    onChange={() => handleOptionChange(question.id, option)}
+                                                    checked={answers.find((answer) => answer.id == question.id && answer.answer == option) != undefined}
                                                     required
                                                 />
                                                 <label htmlFor={uniqueId}>{option}</label>

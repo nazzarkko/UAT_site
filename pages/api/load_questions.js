@@ -1,5 +1,5 @@
 import { connect } from "../../utils/mysql";
-import { categories } from "../../info/categories";
+import { categories, adaptivity200 } from "../../info/categories";
 
 
 export default async function handler(req, res) {
@@ -25,12 +25,17 @@ export default async function handler(req, res) {
         return row.idquestion;
     });
     // cut to 10 questions
-    idquestions.splice(10);
+    // idquestions.splice(10);
 
     const placeholders = idquestions.map(() => '?').join(', ');
     const query = `SELECT idquestion, question, answer FROM questions.questions WHERE idquestion IN (${placeholders})`;
 
     const [rows, fields] = await pool.execute(query, idquestions);
+
+    if (adaptivity200.includes(section)) {
+        // randomize order
+        rows.sort(() => Math.random() - 0.5);
+    }
 
     const questions = rows.map((question) => {
         const answers = Object.keys(question.answer);
@@ -40,6 +45,9 @@ export default async function handler(req, res) {
             answer: answers,
         };
     });
+
+
+    console.log(questions);
 
 
     res.status(200).json(questions);
