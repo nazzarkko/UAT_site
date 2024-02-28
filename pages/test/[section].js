@@ -143,7 +143,7 @@ function index() {
                                         return (
                                             <div key={uniqueId} className={styles.option}>
                                                 <input
-                                                    type="checkbox"
+                                                    type="radio"
                                                     id={uniqueId}
                                                     name={`question-${index}`}
                                                     value={option}
