@@ -123,11 +123,26 @@ function index() {
 
 
 
+
+
+
     return (
         <div className={styles.main}>
             <div className={styles.container}>
-                <div className={styles.title}>
-                    Секція: {category}
+                <div className={styles.title_category}>
+                    {/* Секція: {category} */}
+                    {categories.map((category, index) => (
+                        <div key={index} className={styles.category}>
+                            <div className={categories.indexOf(category) <= categories.indexOf(category1)
+                                ? styles.active : styles.inactive}>
+                                +
+                            </div>
+                            <div style={{ height: '100%' }}></div>
+                            <div className={styles.category_name}>
+                                {categories_ukr[category]}
+                            </div>
+                        </div>
+                    ))}
                 </div>
 
                 <form onSubmit={handleSubmit}>
@@ -143,7 +158,7 @@ function index() {
                                         return (
                                             <div key={uniqueId} className={styles.option}>
                                                 <input
-                                                    type="checkbox"
+                                                    type="radio"
                                                     id={uniqueId}
                                                     name={`question-${index}`}
                                                     value={option}
