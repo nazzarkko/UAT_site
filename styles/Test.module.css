@@ -56,16 +56,16 @@
     align-items: center;
     justify-content: space-between;
 
-    width: 150px;
+    width: 200px;
 }
 
 .category .active {
     color: white;
-    background-color: green;
+    background-color: #3B9D4C;
     border-radius: 50%;
 
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
 
     margin-bottom: 30px;
 
@@ -77,12 +77,12 @@
 }
 
 .category .inactive {
-    color: white;
-    background-color: grey;
+    color:#ABABAB;
+    background-color:#4C4C4C;
     border-radius: 50%;
 
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
 
     margin-bottom: 30px;
 
@@ -95,24 +95,23 @@
 
 .category .category_name {
     margin-top: 10px;
+    color: white;
 }
 
 .questions {
     font-size: 1.2rem;
     margin-bottom: 50px;
-    width: 80%;
-    max-width: 800px;
-    min-width: 100px;
-    
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
-    align-items: flex-start;
-    margin-left: 15px;
 }
 
 .question {
+    font: DM Sans;
     display: flex;
-    align-items: center;
+    font-size: 1rem;
+    padding-left: 50px;
     justify-content: center;
     flex-direction: column;
     align-items: flex-start;
@@ -120,57 +119,18 @@
     font-weight: 300;
     color: white;
     background-color: #27282C;
-    width: 150%;
+    width: 80%;
     height: 60%;
-    border-radius: 10px;
-    margin-left: -90px;
+    border-radius: 7px;
+    padding-bottom: 20px;
 }
 
 .questionTitle {
-    font-size: 1.5rem;
+    padding-top: 20px;
+    font-size: 1.1rem;
     margin-bottom: 10px;
     color: white;
 }
-
-.option input[type="checkbox"] {
-    display: none; 
-}
-
-.option input[type="checkbox"] + label {
-    position: relative;
-    padding-left: 25px;
-    cursor: pointer;
-    margin-left: 20px;
-    margin-bottom: 20px; /* Доданий відступ між кожною галочкою */
-}
-
-.option input[type="checkbox"] + label:before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 20px;
-    height: 20px;
-    border: 1px solid #ccc;
-    border-radius: 3px; 
-}
-
-.option input[type="checkbox"]:checked + label:before {
-    background-color: #3B9D4C; /* Зелений колір фону */
-}
-
-.option input[type="checkbox"]:checked + label:after {
-    content: "\2713"; /* Галочка */
-    position: absolute;
-    bottom: 2px;
-    left: 2px;
-    color: white; /* Колір галочки */
-    font-size: 20px;
-    padding-top: 10px;
-    padding: auto;
-}
-
-
 
 .navigation {
     display: flex;

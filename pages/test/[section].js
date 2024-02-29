@@ -3,10 +3,9 @@ import { useEffect, useState } from "react";
 import styles from '../../styles/Test.module.css'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-
 import { writeLS, readLS } from "../../utils/localstorage";
 import { categories, categories_ukr } from "../../info/categories";
-
+import Header from "../components/Header";
 
 function index() {
 
@@ -128,6 +127,7 @@ function index() {
 
     return (
         <div className={styles.main}>
+            <Header />
             <div className={styles.container}>
                 <div className={styles.title_category}>
                     {/* Секція: {category} */}
@@ -135,7 +135,7 @@ function index() {
                         <div key={index} className={styles.category}>
                             <div className={categories.indexOf(category) <= categories.indexOf(category1)
                                 ? styles.active : styles.inactive}>
-                                +
+                                ✔
                             </div>
                             <div style={{ height: '100%' }}></div>
                             <div className={styles.category_name}>
