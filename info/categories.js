@@ -24,8 +24,8 @@
 
 
 export const categories = [
+     "mathematical abilities",
      "logic",
-    "mathematical abilities",
     "leadership",
     "behavioural regulation",
     "communication potential",
