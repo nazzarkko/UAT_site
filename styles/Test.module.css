@@ -30,6 +30,7 @@
     border-radius: 50px;
     margin-top: 30px;
 }
+
 .titleResult {
     font-size: 4rem;
     margin-bottom: 50px;
@@ -56,6 +57,24 @@
 
 
 
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 15px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+
+}
+
+.optionRow {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
 }
 
 .category {
@@ -87,8 +106,8 @@
 }
 
 .category .inactive {
-    color:#ABABAB;
-    background-color:#4C4C4C;
+    color: #ABABAB;
+    background-color: #4C4C4C;
     border-radius: 50%;
 
     width: 40px;
@@ -186,4 +205,3 @@
     }
 
 }
-

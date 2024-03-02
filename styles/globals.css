@@ -2,10 +2,13 @@
 
 
 body {
-    background-color:#1B1C1E;
+    background-color: #1B1C1E;
 
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: sans-serif;
+
+}
+
 }
