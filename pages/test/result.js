@@ -94,6 +94,7 @@ function index() {
     return (
         <div className={styles.main}>
             <Header/>
+            <div className={styles.square}>
             <div className={styles.container}>
                 <div className={styles.title}>
                     Ваш результат
@@ -105,8 +106,9 @@ function index() {
 
 
 
-
             </div>
+            </div>
+            
         </div>
     );
 }
