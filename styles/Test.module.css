@@ -67,7 +67,6 @@
     gap: 15px;
     margin-bottom: 10px;
     margin-top: 10px;
-
 }
 
 .optionRow {
@@ -75,6 +74,7 @@
     flex-direction: row;
     align-items: center;
     gap: 20px;
+    background-color: #27282C;
 }
 
 .category {
@@ -167,23 +167,13 @@
     align-items: center;
     justify-content: center;
     width: 80%;
-    margin-left: 10%;
     max-width: 800px;
     margin-bottom: 50px;
     gap: 20%;
 }
 
 .submit {
-    border: none;
-    font-size: 1.5rem;
-    background-color: black;
-    color: white;
-    padding: 20px 50px 20px 50px;
-    border-radius: 50px;
-}
-
-.back {
-    border: none;
+    border-width: 2px;
     font-size: 1.5rem;
     background-color: white;
     color: black;
@@ -191,10 +181,20 @@
     border-radius: 50px;
 }
 
+.back {
+    border-width: 2px;
+    border-color: white;
+    font-size: 1.5rem;
+    background-color:#27282C;
+    color: white;
+    padding: 20px 50px 20px 50px;
+    border-radius: 50px;
+}
+
 
 
 .results {
-    width: 60%;
+    width: 80%;
     margin-bottom: 100px;
     color: white;
 }
@@ -202,6 +202,27 @@
 @media screen and (max-width: 800px) {
     .results {
         width: 90%;
+        align-items: center;
+        justify-content: center;
+    }
+    .question{
+        display: flex;
+        width: 90%;
+    }
+    .questions{
+        display: flex;
+        width: 90%;
+        align-items: center;
+    justify-content: center;
+    }
+    .questionTitle{
+        display: flex;
+        width: 90%;
+        align-items: center;
+        justify-content: center;
+    }
+    .category{
+        display: none;
     }
 
 }
