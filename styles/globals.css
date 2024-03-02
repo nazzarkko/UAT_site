@@ -2,20 +2,10 @@
 
 
 body {
-    background-color:#1B1C1E;
+    background-color: #1B1C1E;
 
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: sans-serif;
-}
-.checkbox {
-    width: 25px;
-    height: 25px;
-    border: 1px solid var(--stone);
-    border-radius: 4px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
 }

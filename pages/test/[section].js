@@ -6,6 +6,7 @@ import { useRouter } from 'next/router'
 import { writeLS, readLS } from "../../utils/localstorage";
 import { categories, categories_ukr } from "../../info/categories";
 import Header from "../components/Header";
+import Checkbox from "react-custom-checkbox";
 
 function index() {
 
@@ -116,6 +117,7 @@ function index() {
         }
         // if not found, add a new answer
         newAnswers.push({ id: questionIndex, answer: selectedOption });
+        setAnswers(newAnswers);
 
     };
 
@@ -156,17 +158,22 @@ function index() {
                                     {question.answer.map((option, index_) => {
                                         const uniqueId = `question-${index}-option-${index_}`;
                                         return (
-                                            <div key={uniqueId} className={styles.option}>
-                                                <input
-                                                    type="radio"
-                                                    id={uniqueId}
-                                                    name={`question-${index}`}
-                                                    value={option}
-                                                    onChange={() => handleOptionChange(question.id, option)}
+                                            <div className={styles.optionRow}>
+                                                <Checkbox
+                                                    icon={
+                                                        <svg xmlns="http://www.w3.org/2000/svg" height="58" viewBox="0 -960 960 960" width="58"><path fill="var(--dark-white)" d="M379.154-258.309 168.616-468.846l32.615-32.23 177.923 177.923 379-379.384 32.614 32.614-411.614 411.614Z" /></svg>
+                                                    }
+                                                    style={{ backgroundColor: "white", border: "1px solid #000", padding: 5 }}
+                                                    name="my-input"
                                                     checked={answers.find((answer) => answer.id == question.id && answer.answer == option) != undefined}
-                                                    required
+                                                    onChange={
+                                                        () => handleOptionChange(question.id, option)
+                                                    }
+                                                    labelStyle={{ marginLeft: 5, userSelect: "none" }}
                                                 />
-                                                <label htmlFor={uniqueId}>{option}</label>
+                                                <label htmlFor={uniqueId} className={styles.option} key={index_}>
+                                                    {option}
+                                                </label>
                                             </div>
                                         );
                                     })}
