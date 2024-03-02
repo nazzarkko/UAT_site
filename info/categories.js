@@ -46,12 +46,12 @@ export const adaptivity200 = [
 
 export const categories_ukr = {
     "leadership": "Лідерство",
-    "behavioural regulation": "Регуляція поведінки",
+     "suicidal danger": "Самогубство",
     "communication potential": "Комунікативний потенціал",
     "moral and ethical normativity": "Морально-етична нормативність",
     "military and professional orientation": "Військово-професійна орієнтація",
+     "behavioural regulation": "Регуляція поведінки",
     "tendency to deviant behaviour": "Схильність до девіантної поведінки",
-    "suicidal danger": "Самогубство",
     "logic": "Логіка",
     "mathematical abilities": "Математичні здібності"
 }
