@@ -40,14 +40,13 @@ function index() {
         const dataPoints = chartData_;
         const chartData = {
             labels: Object.keys(dataPoints).map((key) => categories_ukr[key]),
-            // set label size
             datasets: [
                 {
                     label: 'Результати тесту',
                     data: Object.values(dataPoints).map((value) => parseInt(value * 100)),
-                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                    borderColor: 'rgba(255, 99, 132, 1)',
-                    borderWidth: 1,
+                    backgroundColor: 'rgba(21, 166, 117, 0.12)',
+                    borderColor: 'rgba(21, 200, 117, 0.6)',
+                    borderWidth: 4
                 },
             ],
         };
@@ -71,10 +70,11 @@ function index() {
         scales: {
             r: {
                 angleLines: {
-                    display: true
+                    color: 'rgba(21, 255, 117, 0.5)',
                 },
-                suggestedMin: 0,
-                suggestedMax: 100,
+                grid: {
+                    color: 'rgba(21, 255, 117, 0.5)', 
+                },
                 pointLabels: {
                     font: {
                         size: width > 600 ? 20 : 12,
@@ -82,10 +82,10 @@ function index() {
                 },
                 ticks: {
                     font: {
-                        size: 12,
+                        size: 5,
+
                     }
                 }
-
             },
         },
     };
@@ -94,10 +94,11 @@ function index() {
         <div className={styles.main}>
             <div className={styles.container}>
                 <div className={styles.title}>
-                    Результати тесту
+                    Ваш результат
                 </div>
 
                 <div className={styles.results}>
+                    <div className={styles.radar_title}>Radar Chart</div>
                     {chartData && <Radar data={chartData} options={chartOptions} />}
                 </div>
 

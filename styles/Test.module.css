@@ -8,14 +8,23 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: black;
+
     width: 100%;
 }
-
+.radar_title{
+    font-size: 2.5rem;
+    justify-content: center;
+    color: white;
+    padding: 50px;
+    border-radius: 50px;
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    color: #3B9D4C;
+}
 .title {
     font-size: 2.5rem;
     margin-bottom: 50px;
-    background-color: black;
     color: white;
     padding: 50px;
     border-radius: 50px;
@@ -23,12 +32,12 @@
 }
 
 .titleResult {
-    font-size: 2.5rem;
+    font-size: 4rem;
     margin-bottom: 50px;
     color: white;
     padding: 50px;
     margin-top: 30px;
-    font-weight: 700;
+    font-weight: 900;
 }
 
 .title_category {
