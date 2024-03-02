@@ -15,12 +15,10 @@
     font-size: 2.5rem;
     justify-content: center;
     color: white;
-    padding: 50px;
     border-radius: 50px;
-    margin-top: 30px;
     display: flex;
     align-items: center;
-    color: #3B9D4C;
+    color: #15FF757B;
 }
 .title {
     font-size: 2.5rem;
@@ -36,7 +34,6 @@
     margin-bottom: 50px;
     color: white;
     padding: 50px;
-    margin-top: 30px;
     font-weight: 900;
 }
 
@@ -47,7 +44,6 @@
     flex-direction: row;
     align-items: flex-start;
     justify-content: center;
-    margin-top: 50px;
 
     gap: 20px;
 
@@ -155,7 +151,6 @@
 }
 
 .questionTitle {
-    padding-top: 20px;
     font-size: 1.1rem;
     margin-bottom: 10px;
     color: white;
@@ -194,9 +189,15 @@
 
 
 .results {
-    width: 80%;
+    width: 90%;
     margin-bottom: 100px;
     color: white;
+}
+.square{
+    margin-top: 100px;
+    background-color: #292929;
+    width: 80%;
+    border-radius: 5px;
 }
 
 @media screen and (max-width: 800px) {
