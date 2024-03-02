@@ -9,6 +9,7 @@ import { categories, categories_ukr } from "../../info/categories";
 
 import { Radar } from 'react-chartjs-2';
 import 'chart.js/auto';
+import Header from "../components/Header";
 
 
 function index() {
@@ -92,13 +93,13 @@ function index() {
 
     return (
         <div className={styles.main}>
+            <Header/>
             <div className={styles.container}>
                 <div className={styles.title}>
                     Ваш результат
                 </div>
-
+                <div className={styles.radar_title}>Radar Chart</div>,
                 <div className={styles.results}>
-                    <div className={styles.radar_title}>Radar Chart</div>
                     {chartData && <Radar data={chartData} options={chartOptions} />}
                 </div>
 
