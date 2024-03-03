@@ -202,19 +202,22 @@
 
 @media screen and (max-width: 800px) {
     .results {
-        width: 90%;
+        width: 100%;
         align-items: center;
         justify-content: center;
     }
     .question{
         display: flex;
         width: 90%;
+        padding: 0px , 0px, 0px, 50px;
     }
     .questions{
         display: flex;
         width: 90%;
         align-items: center;
-    justify-content: center;
+        justify-content: center;
+        flex-direction: column;
+        margin-left: 5%;
     }
     .questionTitle{
         display: flex;
@@ -224,6 +227,15 @@
     }
     .category{
         display: none;
+        max-height: 20px;
+        max-width: 20px;
+    }
+    .square{
+        background-color: #1B1C1E;
+        width: 100%;
+    }
+    .labels{
+        
     }
 
 }
