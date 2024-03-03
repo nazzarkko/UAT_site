@@ -234,8 +234,8 @@
         background-color: #1B1C1E;
         width: 100%;
     }
-    .labels{
-        
+    .radar_title{
+        display: none;
     }
 
 }
