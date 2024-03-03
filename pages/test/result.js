@@ -78,13 +78,12 @@ function index() {
                 },
                 pointLabels: {
                     font: {
-                        size: width > 600 ? 20 : 12,
+                        size: width < 600 ? 8 : 20,
                     }
                 },
                 ticks: {
                     font: {
-                        size: 5,
-
+                        size: width < 800 ? 3 : 8,
                     }
                 }
             },
