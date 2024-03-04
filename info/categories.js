@@ -31,8 +31,8 @@ export const categories = [
     "tendency to deviant behaviour",
     "suicidal danger",
     "military and professional orientation",
+    "behavioural regulation",
     "leadership",
-    "behavioural regulation"
 ]
 
 export const adaptivity200 = [
