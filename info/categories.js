@@ -24,14 +24,14 @@
 
 
 export const categories = [
-    "mathematical abilities",
     "logic",
-    "tendency to deviant behaviour",
+    "mathematical abilities",
     "military and professional orientation",
-    "leadership",
+    "tendency to deviant behaviour",
+    "moral and ethical normativity",
     "suicidal danger",
     "communication potential",
-    "moral and ethical normativity",
+    "leadership",
     "behavioural regulation"
 ]
 
